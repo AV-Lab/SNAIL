@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>general_description</name>
+  <version>0.0.0</version>
+  <description>The general_description of a robot package</description>
+
+  <maintainer email="fayyazpocker@gmail.com">fayyazpocker</maintainer>
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>joint_state_publisher</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>xacro</build_depend>
+
+  <build_export_depend>joint_state_publisher</build_export_depend>
+  <build_export_depend>robot_state_publisher</build_export_depend>
+  <build_export_depend>roslaunch</build_export_depend>
+  <build_export_depend>xacro</build_export_depend>
+  
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- Loading required sensors or platform -->
+  <arg name="enable_rviz" default="false"/>
+  <arg name="load_fake_joint" default="false"/>
+  
+  <param name="robot_description" command="xacro --inorder '$(find general_description)/robots/robot.urdf.xacro' " />
+
+<!-- Enabling RViz -->
+      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" if="$(arg enable_rviz)">
+        <param name="use_gui" value="$(arg load_fake_joint)"/>
+      </node>
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find general_description)/config/general.rviz" if="$(arg enable_rviz)"/>
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" if="$(arg enable_rviz)">
+      </node>
+</launch>
+
+
+
+
+
+

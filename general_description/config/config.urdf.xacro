@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Chasis configuration -->
+    <xacro:property name="chasis_link_name" value="base_link" />
+    <xacro:property name="chasis_mass" value="5" />
+    <xacro:property name="chasis_length" value="0.508" />
+    <xacro:property name="chasis_width" value="0.383" />
+    <xacro:property name="chasis_height" value="0.195" />
+    <xacro:property name="chasis_meshfile" value="chasis.dae" />
+
+    <!-- Wheel configuration -->
+    <xacro:arg name="no_of_wheels" default="2" />
+    <!-- Absolute value of distance of wheel center from the center of the chasis -->
+    <xacro:property name="wheel_center_to_chasis_center" value="0.066" />
+    <xacro:property name="wheel_radius" value="0.111" />
+    <xacro:property name="wheel_thickness" value="0.096" />
+    <xacro:property name="wheel1_link_name" value="left_wheel" />
+    <xacro:property name="wheel1_pos_x" value="5" />
+    <xacro:property name="wheel1_pos_y" value="5" />
+    <xacro:property name="wheel1_pos_z" value="5" />
+
+</robot>

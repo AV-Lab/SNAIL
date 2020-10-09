@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="general">
+
+    
+    <xacro:include filename="$(find general_description)/config/config.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/urdf/inertia.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/urdf/chasis.urdf.xacro" />
+
+</robot>
