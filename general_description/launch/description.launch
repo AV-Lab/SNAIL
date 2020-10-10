@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
+  <!-- Robot Name -->
+  <arg name="robot_name" default="husky"/>
+
   <!-- Loading required sensors or platform -->
   <arg name="enable_rviz" default="false"/>
   <arg name="load_fake_joint" default="false"/>
   
-  <param name="robot_description" command="xacro --inorder '$(find general_description)/robots/robot.urdf.xacro' " />
+  <param name="robot_description" command="xacro --inorder '$(find general_description)/robots/robot.urdf.xacro' robot_name:=$(arg robot_name)" />
 
 <!-- Enabling RViz -->
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" if="$(arg enable_rviz)">

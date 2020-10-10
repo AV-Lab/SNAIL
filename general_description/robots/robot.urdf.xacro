@@ -1,9 +1,17 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="general">
 
-    
-    <xacro:include filename="$(find general_description)/config/config.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/config/$(arg robot_name)_config.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/urdf/material.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/inertia.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/chasis.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/urdf/wheel.urdf.xacro" />
+
+    <!-- Adding four wheels -->
+    <xacro:wheel link_name="front_left_wheel" wheel_pos="${front_left_wheel_pos}" mesh_filename="${wheel_meshfile}"/>
+    <xacro:wheel link_name="front_right_wheel" wheel_pos="${front_right_wheel_pos}" mesh_filename="${wheel_meshfile}"/>
+    <xacro:wheel link_name="rear_left_wheel" wheel_pos="${rear_left_wheel_pos}" mesh_filename="${wheel_meshfile}"/>
+    <xacro:wheel link_name="rear_right_wheel" wheel_pos="${rear_right_wheel_pos}" mesh_filename="${wheel_meshfile}"/>
+
 
 </robot>

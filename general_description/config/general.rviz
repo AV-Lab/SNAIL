@@ -76,6 +76,26 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: BOT
       Robot Description: robot_description
       TF Prefix: ""
@@ -93,6 +113,14 @@ Visualization Manager:
           Value: true
         footprint:
           Value: true
+        front_left_wheel:
+          Value: true
+        front_right_wheel:
+          Value: true
+        rear_left_wheel:
+          Value: true
+        rear_right_wheel:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
@@ -102,6 +130,14 @@ Visualization Manager:
         footprint:
           base_link:
             base_link_inertia:
+              {}
+            front_left_wheel:
+              {}
+            front_right_wheel:
+              {}
+            rear_left_wheel:
+              {}
+            rear_right_wheel:
               {}
       Update Interval: 0
       Value: true
@@ -130,25 +166,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 20.6980476
+      Distance: 1.51490557
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.00961142778
-        Y: -0.198700249
+        X: 0.0585414767
+        Y: 0.369790435
         Z: 5.21540642e-08
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.255837917
+      Pitch: 0.455837727
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 4.56173897
+      Yaw: 0.713553131
     Saved: ~
 Window Geometry:
   Displays:

@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<material name="wheel">
-		<color rgba="0 0 1 1.0"/>
+		<color rgba="0 1.0 1.0 1.0"/>
 	</material>
 	<material name="chasis">
 		<color rgba="0 1 0 1.0"/>

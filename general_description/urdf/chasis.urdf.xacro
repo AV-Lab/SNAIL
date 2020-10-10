@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <!-- Setting up base_link -->
-    <link name="${chasis_link_name}">
+    <link name="base_link">
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <collision>
             <origin rpy="0 0 0" xyz="0 0 ${chasis_height/2}"/>
@@ -20,23 +20,23 @@
         </visual>
     </link>
 
-    <!-- chasis_link_name_inertia have the inertia details -->
-    <link name="${chasis_link_name}_inertia">
+    <!-- base_link_inertia have the inertia details -->
+    <link name="base_link_inertia">
         <xacro:inertia_box m="${chasis_mass}" x="${chasis_length}" y="${chasis_width}" z="${chasis_height}" xyz="0 0 0"/>
     </link>
 
-    <joint name="${chasis_link_name}_inertial_joint" type="fixed">
+    <joint name="base_link_inertial_joint" type="fixed">
         <origin xyz="0 0 ${chasis_height/2}" rpy="0 0 0" />
-        <parent link="${chasis_link_name}" />
-        <child link="${chasis_link_name}_inertia" />
+        <parent link="base_link" />
+        <child link="base_link_inertia" />
     </joint>
 
     <!-- Footprint link on the ground -->    
     <link name="footprint" />
     <joint name="footprint_joint" type="fixed">
-        <origin xyz="0 0 ${wheel_radius - (wheel_center_to_chasis_center - chasis_height/2)}" rpy="0 0 0" />
+        <origin xyz="0 0 ${wheel_center_to_chasis_center + wheel_radius - chasis_height/2}" rpy="0 0 0" />
         <parent link="footprint" />
-        <child link="${chasis_link_name}" />
+        <child link="base_link" />
     </joint>
 
 </robot>
