@@ -54,7 +54,7 @@ Visualization Manager:
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
-      Collision Enabled: false
+      Collision Enabled: true
       Enabled: true
       Links:
         All Links Enabled: true
@@ -76,6 +76,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_lidar:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -114,6 +119,8 @@ Visualization Manager:
           Value: true
         front_left_wheel:
           Value: true
+        front_lidar:
+          Value: true
         front_right_wheel:
           Value: true
         rear_left_wheel:
@@ -131,6 +138,8 @@ Visualization Manager:
             base_link_inertia:
               {}
             front_left_wheel:
+              {}
+            front_lidar:
               {}
             front_right_wheel:
               {}
@@ -165,7 +174,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.38488376
+      Distance: 0.943759501
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -180,10 +189,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.720837712
+      Pitch: 0.175838217
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 3.12488675
+      Yaw: 2.05988312
     Saved: ~
 Window Geometry:
   Displays:

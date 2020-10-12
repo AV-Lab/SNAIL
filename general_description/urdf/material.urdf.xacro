@@ -7,4 +7,7 @@
 	<material name="chasis">
 		<color rgba="0 1 0 1.0"/>
 	</material>
+	<material name="lidar">
+		<color rgba="1 0 0 1.0"/>
+	</material>
 </robot>

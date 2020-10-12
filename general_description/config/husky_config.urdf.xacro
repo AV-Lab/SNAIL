@@ -22,12 +22,17 @@
     <xacro:property name="right_wheel_meshfile" value="${robot_name}/wheel.dae" />
 
     <!-- Add the height of the wheel wrt to center of the chasis instead of the numeric value -->
-    <xacro:property name="z_pos_wheel" value="${-wheel_center_to_chasis_center + chasis_height/2}" />
     <xacro:property name="x_pos_wheel" value="0.256" />
     <xacro:property name="y_pos_wheel" value="0.2854" />
-    <xacro:property name="front_left_wheel_pos" value="${x_pos_wheel} ${y_pos_wheel} ${z_pos_wheel}" />
-    <xacro:property name="front_right_wheel_pos" value="${x_pos_wheel} ${-y_pos_wheel} ${z_pos_wheel}" />
-    <xacro:property name="rear_left_wheel_pos" value="${-x_pos_wheel} ${y_pos_wheel} ${z_pos_wheel}" />
-    <xacro:property name="rear_right_wheel_pos" value="${-x_pos_wheel} -${y_pos_wheel} ${z_pos_wheel}" />
+
+    <!-- Lidar Addition and position of sensor wrt -->
+    <xacro:arg name="enable_lidar" default="true"/>
+        <xacro:property name="lidar_link_name" value="front_lidar" />
+        <xacro:property name="lidar_xyz" value="-0.15 0 0.354" />
+        <xacro:property name="lidar_rpy" value="0 0 0" />
+        <xacro:property name="min_scan_angle" value="-3.14" />
+        <xacro:property name="max_scan_angle" value="3.14" />
+        <xacro:property name="min_scan_range" value="0.5" />
+        <xacro:property name="max_scan_range" value="20" />
 
 </robot>

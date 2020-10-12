@@ -1,6 +1,7 @@
 To do:
 - right wheel dae seperate for pioneer
 - Sensor additions
+- Lidar dae and collision positioning
 
 Notes:
 - Chasis visual should have origin at its center.

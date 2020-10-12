@@ -10,4 +10,38 @@
     </plugin>
   </gazebo>
 
+  <xacro:if value="$(arg enable_lidar)">
+    <gazebo reference="${lidar_link_name}">
+      <sensor type="ray" name="${lidar_link_name}">
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>true</visualize>
+          <update_rate>25</update_rate>
+          <ray>
+              <scan>
+                  <horizontal>
+                      <samples>720</samples>
+                      <resolution>0.25</resolution>
+                      <min_angle>${min_scan_angle}</min_angle>
+                      <max_angle>${max_scan_angle}</max_angle>
+                  </horizontal>
+              </scan>
+              <range>
+                  <min>${min_scan_range}</min>
+                  <max>${max_scan_range}</max>
+                  <resolution>0.25</resolution>
+              </range>
+              <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.01</stddev>
+              </noise>
+          </ray>
+          <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+              <topicName>${lidar_link_name}_scan</topicName>
+              <frameName>${lidar_link_name}</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:if>
+
 </robot>

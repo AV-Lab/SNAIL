@@ -6,13 +6,25 @@
     <xacro:include filename="$(find general_description)/urdf/inertia.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/chasis.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/wheel.urdf.xacro" />
+    <xacro:include filename="$(find general_description)/urdf/sensor.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/gazebo.xacro" />
+
+    <xacro:property name="z_pos_wheel" value="${-wheel_center_to_chasis_center + chasis_height/2}" />
+    <xacro:property name="front_left_wheel_pos" value="${x_pos_wheel} ${y_pos_wheel} ${z_pos_wheel}" />
+    <xacro:property name="front_right_wheel_pos" value="${x_pos_wheel} ${-y_pos_wheel} ${z_pos_wheel}" />
+    <xacro:property name="rear_left_wheel_pos" value="${-x_pos_wheel} ${y_pos_wheel} ${z_pos_wheel}" />
+    <xacro:property name="rear_right_wheel_pos" value="${-x_pos_wheel} -${y_pos_wheel} ${z_pos_wheel}" />
 
     <!-- Adding four wheels -->
     <xacro:wheel link_name="front_left_wheel" wheel_pos="${front_left_wheel_pos}" mesh_filename="${left_wheel_meshfile}"/>
     <xacro:wheel link_name="front_right_wheel" wheel_pos="${front_right_wheel_pos}" mesh_filename="${left_wheel_meshfile}"/>
     <xacro:wheel link_name="rear_left_wheel" wheel_pos="${rear_left_wheel_pos}" mesh_filename="${left_wheel_meshfile}"/>
     <xacro:wheel link_name="rear_right_wheel" wheel_pos="${rear_right_wheel_pos}" mesh_filename="${left_wheel_meshfile}"/>
+
+    <!-- Adding sensors -->
+    <xacro:if value="$(arg enable_lidar)">
+        <xacro:sensor_lidar link_name="${lidar_link_name}" xyz="${lidar_xyz}" rpy="${lidar_rpy}"/>
+    </xacro:if>
 
 
 </robot>

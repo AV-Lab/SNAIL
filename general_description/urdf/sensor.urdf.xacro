@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Adding macro for Lidar -->
+  <xacro:macro name="sensor_lidar" params="link_name xyz rpy">
+    <link name="${link_name}">
+      <xacro:inertia_box m="1.1" x="0.105" y="0.102" z="0.152" xyz="0 0 0"/>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 -0.045"/>
+        <geometry>
+          <box size="0.105 0.102 0.152"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="lidar"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://general_description/meshes/sensors/LMS1xx_small.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+    </link>
+
+  <!-- Lidar joint -->
+    <joint name="${link_name}_joint" type="fixed">
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+      <child link="${link_name}"/>
+      <parent link="base_link"/>
+    </joint>
+    </xacro:macro>
+
+
+  <!-- <xacro:macro name="zed_sensor" params="name"> -->
+    <!-- All the below links and joints are according to zed manual details -->
+    <!-- Links which are to be attached as child with ${name} -->
+    <!-- <link name="${name}_left_frame" />
+    <link name="${name}_left_optical_frame"/>
+    <link name="${name}_right_frame" />
+    <link name="${name}_right_optical_frame"/> -->
+    <!-- Joints to attach these links with the zed_front -->
+    <!-- <xacro:joint_sensor name="${name}_left_joint" parent="${name}" child="${name}_left_frame" origin_xyz="0 0.06 0" origin_rpy="0 0 0"/>
+
+    <xacro:joint_sensor name="${name}_left_optical_joint" parent="${name}_left_frame" child="${name}_left_optical_frame" origin_xyz="0 0 0" origin_rpy="-1.57079632679 0.0 -1.57079632679"/>
+
+    <xacro:joint_sensor name="${name}_right_joint" parent="${name}" child="${name}_right_frame" origin_xyz="0 -0.06 0" origin_rpy="0 0 0"/>
+
+    <xacro:joint_sensor name="${name}_right_optical_joint" parent="${name}_right_frame" child="${name}_right_optical_frame" origin_xyz="0 0 0" origin_rpy="-1.57079632679 0.0 -1.57079632679"/>
+  </xacro:macro> -->
+</robot>
