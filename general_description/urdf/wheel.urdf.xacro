@@ -42,8 +42,8 @@
 		</transmission>
 
     <gazebo reference="${link_name}" >
-      <mu1 value="100.0" />
-      <mu2 value="100.0" />
+      <mu1 value="1.0" />
+      <mu2 value="1.0" />
       <kp  value="100000.0" />
       <kd  value="1.0" />
     </gazebo>

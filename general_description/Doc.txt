@@ -1,7 +1,0 @@
-To do:
-- Left and right wheel dae seperate for pioneer
-- wheel dae of husky's origin needs to be corrected
-
-Notes:
-- Chasis visual should have origin at its center.
-- config file must have prefix of robot name followed by config.urdf.xacro eg : husky_config.urdf.xacro

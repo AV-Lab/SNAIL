@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <!-- Add robot name -->
+    <arg name="robot_name" default="/"/>
+
+    <!-- Start pos of robot in gazebo -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.6"/>
+
+    <!-- Add robot description to parameter server -->
+    <include file="$(find general_description)/launch/description.launch" >
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <!-- Controller Loading-->
+    <include file="$(find general_control)/launch/control.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <!-- Spawn tto_robot into Gazebo -->
+    <node name="spawn_tto_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z) " />
+
+
+</launch>
