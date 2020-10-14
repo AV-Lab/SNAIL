@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="general">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="$(arg robot_name)">
 
     <xacro:include filename="$(find general_description)/config/$(arg robot_name)_config.urdf.xacro" />
     <xacro:include filename="$(find general_description)/urdf/material.urdf.xacro" />

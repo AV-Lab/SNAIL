@@ -20,7 +20,7 @@ general_velocity_controller:
   wheel_radius: 0.178
 
   # Base frame_id
-  base_frame_id: base_link
+  base_frame_id: footprint
 
   # TF publisher
   enable_odom_tf: true

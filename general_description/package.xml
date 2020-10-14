@@ -2,7 +2,7 @@
 <package format="2">
   <name>general_description</name>
   <version>0.0.0</version>
-  <description>The general_description of a robot package</description>
+  <description>The general_description of a 4 wheel skid steer robot package</description>
 
   <maintainer email="fayyazpocker@gmail.com">fayyazpocker</maintainer>
 

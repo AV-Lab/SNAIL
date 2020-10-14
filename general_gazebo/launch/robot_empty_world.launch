@@ -2,12 +2,12 @@
 <launch>
 
     <!-- Names of the robot -->
-    <arg name="robot_name" default="/"/>
+    <arg name="robot_name" default="husky"/>
 
     <!--Gazebo_ros package  -->
     <arg name="debug" default="false"/>
     <arg name="gui" default="true"/>
-    <arg name="verbose" default="true"/>
+    <arg name="verbose" default="false"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="headless" default="false"/>

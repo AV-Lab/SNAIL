@@ -38,15 +38,15 @@
               </noise>
           </ray>
           <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-              <robotNamespace>$(arg robot_name)</robotNamespace>
-              <topicName>scan</topicName>
+              <!-- <robotNamespace>$(arg robot_name)</robotNamespace> -->
+              <topicName>$(arg robot_name)/scan</topicName>
               <frameName>${lidar_link_name}</frameName>
           </plugin>
       </sensor>
     </gazebo>
   </xacro:if>
 
-  <xacro:if value="$(arg enable_lidar)">
+  <xacro:if value="$(arg enable_imu)">
     <gazebo reference="${imu_link_name}">
       <gravity>true</gravity>
       <sensor name="imu_sensor" type="imu">
@@ -55,8 +55,8 @@
         <visualize>true</visualize>
         <topic>__default_topic__</topic>
         <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-          <robotNamespace>$(arg robot_name)</robotNamespace>
-          <topicName>imu</topicName>
+          <!-- <robotNamespace>$(arg robot_name)</robotNamespace> -->
+          <topicName>$(arg robot_name)/imu</topicName>
           <bodyName>${imu_link_name}</bodyName>
           <updateRateHZ>10.0</updateRateHZ>
           <gaussianNoise>0.0</gaussianNoise>
@@ -93,11 +93,11 @@
           </clip>
         </camera>
         <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
-          <robotNamespace>$(arg robot_name)</robotNamespace>
+          <!-- <robotNamespace>$(arg robot_name)</robotNamespace> -->
           <baseline>0.2</baseline>
           <alwaysOn>true</alwaysOn>
           <updateRate>${camera_fps}</updateRate>
-          <cameraName>realsense</cameraName>
+          <cameraName>$(arg robot_name)/realsense</cameraName>
           <imageTopicName>color/image_raw</imageTopicName>
           <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_rect_raw</depthImageTopicName>
@@ -124,12 +124,12 @@
   <xacro:if value="$(arg enable_gps)">
     <gazebo>
       <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
-        <robotNamespace>$(arg robot_name)</robotNamespace>
+        <!-- <robotNamespace>$(arg robot_name)</robotNamespace> -->
         <updateRate>40</updateRate>
         <bodyName>${gps_link_name}</bodyName>
         <frameId>${gps_link_name}</frameId>
-        <topicName>navsat/fix</topicName>
-        <velocityTopicName>navsat/vel</velocityTopicName>
+        <topicName>$(arg robot_name)/navsat/fix</topicName>
+        <velocityTopicName>$(arg robot_name)/navsat/vel</velocityTopicName>
         <referenceLatitude>49.9</referenceLatitude>
         <referenceLongitude>8.9</referenceLongitude>
         <referenceHeading>0</referenceHeading>
