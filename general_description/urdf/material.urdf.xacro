@@ -10,4 +10,7 @@
 	<material name="lidar">
 		<color rgba="1 0 0 1.0"/>
 	</material>
+	<material name="camera">
+		<color rgba="0.74 0.74 0.74 1.0"/>
+	</material>
 </robot>

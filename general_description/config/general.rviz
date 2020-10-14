@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /BOT1
         - /TF1/Frames1
       Splitter Ratio: 0.539024413
     Tree Height: 697
@@ -54,7 +53,80 @@ Visualization Manager:
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
-      Collision Enabled: true
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+      Name: Husky
+      Robot Description: husky_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: false
+        base_link_inertia:
+          Value: false
+        camera_link:
+          Value: false
+        camera_link_gazebo:
+          Value: false
+        camera_realsense_lens:
+          Value: true
+        footprint:
+          Value: false
+        front_left_wheel:
+          Value: true
+        front_lidar:
+          Value: false
+        front_right_wheel:
+          Value: true
+        imu_link:
+          Value: false
+        rear_left_wheel:
+          Value: true
+        rear_right_wheel:
+          Value: true
+      Marker Scale: 0.5
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        footprint:
+          base_link:
+            base_link_inertia:
+              {}
+            camera_realsense_lens:
+              camera_link:
+                camera_link_gazebo:
+                  {}
+            front_left_wheel:
+              {}
+            front_lidar:
+              {}
+            front_right_wheel:
+              {}
+            imu_link:
+              {}
+            rear_left_wheel:
+              {}
+            rear_right_wheel:
+              {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
       Enabled: true
       Links:
         All Links Enabled: true
@@ -71,6 +143,19 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_link_gazebo:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_realsense_lens:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         footprint:
           Alpha: 1
           Show Axes: false
@@ -90,6 +175,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         rear_left_wheel:
           Alpha: 1
           Show Axes: false
@@ -100,55 +189,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: BOT
-      Robot Description: robot_description
+      Name: Pioneer3at
+      Robot Description: pioneer3at_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz/TF
-      Enabled: true
-      Frame Timeout: 15
-      Frames:
-        All Enabled: false
-        base_link:
-          Value: true
-        base_link_inertia:
-          Value: true
-        footprint:
-          Value: true
-        front_left_wheel:
-          Value: true
-        front_lidar:
-          Value: true
-        front_right_wheel:
-          Value: true
-        rear_left_wheel:
-          Value: true
-        rear_right_wheel:
-          Value: true
-      Marker Scale: 0.5
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: true
-      Tree:
-        footprint:
-          base_link:
-            base_link_inertia:
-              {}
-            front_left_wheel:
-              {}
-            front_lidar:
-              {}
-            front_right_wheel:
-              {}
-            rear_left_wheel:
-              {}
-            rear_right_wheel:
-              {}
-      Update Interval: 0
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -174,25 +220,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 0.943759501
+      Distance: 1.65872765
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.286135167
-        Y: 0.124845058
-        Z: -6.70552254e-08
+        X: 0.118771106
+        Y: -0.105858058
+        Z: 2.23517418e-08
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.175838217
+      Pitch: 0.60083729
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 2.05988312
+      Yaw: 1.13988423
     Saved: ~
 Window Geometry:
   Displays:

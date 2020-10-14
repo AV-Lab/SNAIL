@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
     <!-- Robot Name -->
     <xacro:property name="robot_name" value="husky" />
 
@@ -10,29 +9,64 @@
     <xacro:property name="chasis_length" value="0.985" />
     <xacro:property name="chasis_width" value="0.571" />
     <xacro:property name="chasis_height" value="0.249" />
-    <xacro:property name="chasis_meshfile" value="${robot_name}/chasis.dae" />
 
     <!-- Wheel configuration -->
-    <!-- Absolute value of distance of wheel center from the center of the chasis -->
-    <xacro:property name="wheel_center_to_chasis_center" value="0.092" />
     <xacro:property name="wheel_mass" value="2" />
     <xacro:property name="wheel_radius" value="0.178" />
     <xacro:property name="wheel_thickness" value="0.114" />
-    <xacro:property name="left_wheel_meshfile" value="${robot_name}/wheel.dae" />
-    <xacro:property name="right_wheel_meshfile" value="${robot_name}/wheel.dae" />
 
-    <!-- Add the height of the wheel wrt to center of the chasis instead of the numeric value -->
+    <!-- Absolute value of height of wheel center from the center of the chasis -->
+    <xacro:property name="wheel_center_to_chasis_center" value="0.092" />
     <xacro:property name="x_pos_wheel" value="0.256" />
     <xacro:property name="y_pos_wheel" value="0.2854" />
 
-    <!-- Lidar Addition and position of sensor wrt -->
+    <!-- Sensor Addition to the platform -->
+    <!-- All the position of sensor is wrt the center of the chasis -->
+
+    <!-- Lidar Addition -->
     <xacro:arg name="enable_lidar" default="true"/>
         <xacro:property name="lidar_link_name" value="front_lidar" />
-        <xacro:property name="lidar_xyz" value="-0.15 0 0.354" />
+        <xacro:property name="visualize_scan" value="false" />
+        <xacro:property name="x_pos_lidar" value="-0.15" />
+        <xacro:property name="y_pos_lidar" value="0" />
+        <xacro:property name="z_pos_lidar" value="0.229" />
         <xacro:property name="lidar_rpy" value="0 0 0" />
         <xacro:property name="min_scan_angle" value="-3.14" />
         <xacro:property name="max_scan_angle" value="3.14" />
         <xacro:property name="min_scan_range" value="0.5" />
         <xacro:property name="max_scan_range" value="20" />
+
+    <!-- IMU sensor Addition -->
+    <xacro:arg name="enable_imu" default="true"/>
+        <xacro:property name="imu_link_name" value="imu_link" />
+        <xacro:property name="x_pos_imu" value="0.19" />
+        <xacro:property name="y_pos_imu" value="0" />
+        <xacro:property name="z_pos_imu" value="0.149" />
+        <xacro:property name="imu_rpy" value="0 -1.57 3.1416" />
+    
+    <!-- Stereo Camera Addition -->
+    <xacro:arg name="enable_stereo" default="true"/>
+        <xacro:property name="camera_link_name" value="camera_link" />
+        <xacro:property name="min_camera_range" value="0.1" />
+        <xacro:property name="max_camera_range" value="8.0" />
+        <xacro:property name="camera_fps" value="30" />
+        <xacro:property name="camera_width" value="640" />
+        <xacro:property name="camera_height" value="480" />
+        <xacro:property name="camera_h_fov" value="1.5184351666" />
+        <xacro:property name="camera_v_fov" value="1.01229011" />
+        <xacro:property name="x_pos_camera" value="0.26" />
+        <xacro:property name="y_pos_camera" value="0" />
+        <xacro:property name="z_pos_camera" value="0.125" />
+        <xacro:property name="camera_rpy" value="0 0 0" />
+    
+    <!-- GPS Sensor Addition -->
+    <xacro:arg name="enable_gps" default="true"/>
+        <xacro:property name="gps_link_name" value="gps_link" />
+        <xacro:property name="x_pos_gps" value="0" />
+        <xacro:property name="y_pos_gps" value="0" />
+        <xacro:property name="z_pos_gps" value="0" />
+        <xacro:property name="gps_rpy" value="0 0 0" />
+    
+
 
 </robot>

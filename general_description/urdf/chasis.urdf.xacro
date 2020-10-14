@@ -14,7 +14,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 ${chasis_height/2}"/>
             <geometry>
-            <mesh filename="package://general_description/meshes/${chasis_meshfile}" scale="1 1 1"/>
+            <mesh filename="package://general_description/meshes/${robot_name}/chasis.dae" scale="1 1 1"/>
             </geometry>
             <material name="chasis"/>
         </visual>

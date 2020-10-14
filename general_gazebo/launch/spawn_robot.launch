@@ -20,7 +20,7 @@
     </include>
 
     <!-- Spawn tto_robot into Gazebo -->
-    <node name="spawn_tto_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z) " />
+    <node name="spawn_tto_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param $(arg robot_name)_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z) " />
 
 
 </launch>
