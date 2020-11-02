@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Frames1
+        - /Segbot1
       Splitter Ratio: 0.539024413
     Tree Height: 697
   - Class: rviz/Selection
@@ -71,27 +72,29 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: false
+        All Enabled: true
         base_link:
-          Value: false
+          Value: true
         base_link_inertia:
-          Value: false
+          Value: true
         camera_link:
-          Value: false
+          Value: true
         camera_link_gazebo:
-          Value: false
-        camera_realsense_lens:
+          Value: true
+        camera_link_realsense_lens:
           Value: true
         footprint:
-          Value: false
+          Value: true
         front_left_wheel:
           Value: true
         front_lidar:
-          Value: false
+          Value: true
         front_right_wheel:
           Value: true
+        gps_link:
+          Value: true
         imu_link:
-          Value: false
+          Value: true
         rear_left_wheel:
           Value: true
         rear_right_wheel:
@@ -106,7 +109,7 @@ Visualization Manager:
           base_link:
             base_link_inertia:
               {}
-            camera_realsense_lens:
+            camera_link_realsense_lens:
               camera_link:
                 camera_link_gazebo:
                   {}
@@ -116,6 +119,8 @@ Visualization Manager:
               {}
             front_right_wheel:
               {}
+            gps_link:
+              {}
             imu_link:
               {}
             rear_left_wheel:
@@ -124,6 +129,22 @@ Visualization Manager:
               {}
       Update Interval: 0
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+      Name: Pioneer3at
+      Robot Description: pioneer3at_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -151,7 +172,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        camera_realsense_lens:
+        camera_link_realsense_lens:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -175,6 +196,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        gps_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         imu_link:
           Alpha: 1
           Show Axes: false
@@ -189,8 +214,8 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: Pioneer3at
-      Robot Description: pioneer3at_description
+      Name: Segbot
+      Robot Description: segbot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -220,7 +245,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.65872765
+      Distance: 1.37740147
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -235,10 +260,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.60083729
+      Pitch: 0.505836964
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 1.13988423
+      Yaw: 0.974889278
     Saved: ~
 Window Geometry:
   Displays:
