@@ -16,6 +16,9 @@ To launch the visualization with husky robot run : <br>
 To launch the visualization with pioneer3at robot run : <br>
 ```roslaunch general_description description.launch enable_rviz:=true robot_name:=pioneer3at```
 
+To launch the visualization with segbot robot run : <br>
+```roslaunch general_description description.launch enable_rviz:=true robot_name:=segbot```
+
 ### Steps to add new robot model
 
 - Add meshes of the robot in *meshes/robot_name* withe the following naming convention
