@@ -46,3 +46,5 @@ change the frame id to front_lidar (line 9) to account for lidar position <arg n
 3) roslaunch cmd_vel_smoother cmd_vel_smoother.launch
 4) roslaunch vehicle_navigation amcl_demo.launch
 5) roslaunch move_base.launch
+
+# p.s do not forget to download navigation stack
