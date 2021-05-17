@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <master auto="start"/>
+  <param name ="use_sim_time" value="false"/>
+
+  <!-- Map server -->
+  <arg name="map_file" default="/home/avl1/catkin_ws/src/vehicle_navigation/map/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- Localization -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <remap from="scan" to="/scan"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="update_min_d" value="0.1"/>
+    <param name="update_min_a" value="0.2"/>
+    <param name="transform_tolerance" value="0.3"/>
+  </node>
+  <!--include file="$(find amcl)/examples/amcl_diff.launch"/-->
+
+
+</launch>
