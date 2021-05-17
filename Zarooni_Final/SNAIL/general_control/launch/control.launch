@@ -1,0 +1,24 @@
+<launch>
+
+    <arg name="robot_name" default="/"/>
+
+    <!-- Robot description to parameter server -->
+    <include file="$(find general_description)/launch/description.launch" >
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <!-- Load controller configurations to parameter server -->
+    <rosparam file="$(find general_control)/config/control.yaml" command="load" ns="$(arg robot_name)"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="$(arg robot_name)" args="general_joint_state_controller general_velocity_controller "/>
+
+    <!-- Run robot state publisher to publish TF -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+        <remap from="robot_description" to="$(arg robot_name)_description" />
+        <remap from="joint_states" to="$(arg robot_name)/joint_states" />
+    </node>
+
+</launch>

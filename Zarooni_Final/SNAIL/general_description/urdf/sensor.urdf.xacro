@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Adding macro for Lidar -->
+  <xacro:macro name="sensor_lidar" params="link_name xyz rpy">
+    <link name="${link_name}">
+      <xacro:inertia_box m="1.1" x="0.105" y="0.102" z="0.152" xyz="0 0 0"/>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.5 0 ${chasis_height}"/>
+        <geometry>
+          <box size="0.105 0.102 0.152"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="lidar"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://general_description/meshes/sensors/LMS1xx_small.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+    </link>
+
+  <!-- Lidar joint -->
+    <joint name="${link_name}_joint" type="fixed">
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+      <child link="${link_name}"/>
+      <parent link="base_link"/>
+    </joint>
+    </xacro:macro>
+
+  <!-- Adding macro for IMU -->
+  <xacro:macro name="sensor_imu" params="link_name xyz rpy">
+    <link name="${link_name}"/>
+
+  <!-- IMU joint -->
+    <joint name="${link_name}_joint" type="fixed">
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+      <child link="${link_name}"/>
+      <parent link="base_link"/>
+    </joint>
+  </xacro:macro>
+
+
+  <!-- Adding macro for Stereo Camera -->
+  <xacro:macro name="sensor_stereo" params="link_name xyz rpy">
+
+      <!-- this link is the origin for the camera's data -->
+    <link name="${link_name}" />
+
+      <!--
+        The gazebo plugin aligns the depth data with the Z axis, with X=left and Y=up
+        ROS expects the depth data along the X axis, with Y=left and Z=up
+        This link only exists to give the gazebo plugin the correctly-oriented frame
+      -->
+    <link name="${link_name}_gazebo" />
+      <joint name="${link_name}_gazebo_joint" type="fixed">
+        <parent link="${link_name}"/>
+        <child link="${link_name}_gazebo"/>
+        <origin xyz="0.0 0 0" rpy="-1.5707963267948966 0 -1.5707963267948966"/>
+      </joint>
+
+    <link name="${link_name}_realsense_lens">
+      <visual>
+        <!--
+          the model's origin is in the middle & it's rotated to lie in
+          the optical standard with X left, Y up, and Z forward
+        -->
+        <origin xyz="-0.0115 0 0.0100" rpy="1.570796 0 -1.570796" />
+        <geometry>
+          <!-- Origin of this mesh is the base of the bracket. -->
+          <mesh filename="package://general_description/meshes/sensors/d415.stl" />
+        </geometry>
+        <material name="camera" />
+      </visual>
+    </link>
+
+    <joint type="fixed" name="${link_name}_realsense_lens_joint">
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <parent link="base_link" />
+      <child link="${link_name}_realsense_lens" />
+    </joint>
+    <joint type="fixed" name="${link_name}_realsense_joint">
+      <origin xyz="0.025 0 0" rpy="0 0 0" />
+      <parent link="${link_name}_realsense_lens" />
+      <child link="${link_name}" />
+    </joint>
+
+  </xacro:macro>
+
+    <!-- Adding macro for GPS -->
+  <xacro:macro name="sensor_gps" params="link_name xyz rpy">
+    <link name="${link_name}"/>
+
+  <!-- IMU joint -->
+    <joint name="${link_name}_joint" type="fixed">
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+      <child link="${link_name}"/>
+      <parent link="base_link"/>
+    </joint>
+  </xacro:macro>
+
+</robot>
