@@ -1,5 +1,6 @@
 # SNAIL
 Code-base for riSk-aware Narrow AI for autonomous vehicLes (SNAIL) project.
+![logo](figs/logo.png)
 
 The code-base is intended to run on multiple platforms, Segway, EasyMile, and Nissan Leaf. This repo is intended mainly for package configuration and basic control and localization tasks. The planner, perception engine, and prediction engine will have separate repositors.
 Related Repos (WIP):
