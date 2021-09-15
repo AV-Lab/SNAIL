@@ -14,7 +14,7 @@ Related Repos (WIP):
 TODO
 
 ## Quick run: SNAIL on Segway
-
+TODO
 ## Other Notes [Need cleanup]
 Zarooni/Launch contains the launch files for rtabmap, download the package first from https://github.com/introlab/rtabmap_ros.git
 
