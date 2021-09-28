@@ -7,7 +7,7 @@ Related Repos (WIP):
 - [waypoint-global-planner](https://github.com/gkouros/waypoint-global-planner)
 - [prediction-engine-viewer]()
 - [HD-map-creator]()
-- [risk-aware-planner]()
+- [risk-aware-planner](https://github.com/AV-Lab/SNAIL/tree/main/Risk-Aware%20Planner)
 - [camera-based-object-detection]()
 
 
