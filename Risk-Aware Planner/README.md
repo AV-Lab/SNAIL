@@ -13,6 +13,12 @@ The following code is the CC-SSP [1] risk-aware planner. The code is based on th
 
 
 
+## Configration:
+* First select the CC-SSP planner in the move_base lauch file  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="ccssp_local_planner/CCSSPPlannerROS" />
+* Second: change the local_planner config file: 1) CCSSPPlannerROS: instead of DWAPlannerROS:,  and 2) define risk_cc and planning_h.
+  
+
 
 
 
