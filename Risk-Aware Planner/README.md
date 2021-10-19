@@ -14,14 +14,6 @@ The following code is the CC-SSP [1] risk-aware planner. The code is based on th
 
 
 
-## Items to be done:
-1. The risk value is currently based on (base_local_planner::ObstacleCostFunction) that uses the cost_map; however, it is not very accurate and depends on cost_map params (inflation) and robot urdf. Therefore, the parameters must be tuned, or an alternative method must be used to compute risk.
-2. The planner should plan for multiple horizons, which involves 1) using the trajectory_genrator to get the set of actions given the state. (note: DWA sampling values should be reduced to reduce the number of actions)
-3. The planner should consider dynamic obstacle prediction: 1) add the prediction to the risk computation (should be based on which prediction the Tans function considers)  2) add the prediction probability to the transition function. 3) Add a method to determine which prediction is correct (observation) to select the appropriate action.
-4. Replace the package name with ccssp_local_planner: all the imports, CMake files, launch files, and dependencies needs to be changed as well.
-
-
-
 
 
 
